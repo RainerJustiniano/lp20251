@@ -89,15 +89,26 @@ def q11():
     Divisão:{div}
     '''
     print(texto)
-q11()
+
 
 #12. Faça um programa que leia um número real e calcule o
 #    quadrado deste número. Ao final, o programa deve
 #    imprimir o resultado do cálculo.
+def q12():
+    num = float(input('num: '))
+    num = num ** 2
+    print (num)
+
 
 #13. Faça um programa que leia o saldo de uma conta poupança e
 #    imprima o novo saldo, considerando um reajuste de 2%.
+def q13():
+    Saldo = float(input('Digite o saldo da conta: ')) 
+    Nsaldo = (Saldo * 0.02)
+    Saldof = (Saldo + Nsaldo)
 
+    print (Saldof)
+q13()
 #14. Faça um programa que leia a base e a altura de um retângulo
 #    e imprima o perímetro (base*2 + altura*2) e a área (base * altura).    
 
