@@ -121,12 +121,34 @@ def q14():
 #15. Faça um programa que leia o valor de um produto, o percentual
 #    do desconto desejado e imprima o valor do desconto e o valor
 #    do produto subtraindo o desconto.
+def q15():
+    valor_produto = float(input('Valor do produto: R$ '))
+    percentual_desconto = float(input('Percentual do desconto: '))
+    valor_desconto = round(valor_produto * percentual_desconto/100, 2)
+    valor_produto_desconto = valor_produto - valor_desconto
+    resultado = f'''
+    Valor do produto: R$ {valor_produto}
+    Valor do desconto: ({percentual_desconto}%): R$ {valor_desconto}
+    Valor final do Produto: R$ {valor_produto_desconto}
+    '''
+    print(resultado)
+
 
 
 #16. Faça um programa que calcule o reajuste do salário de um
 #    funcionário. Para isso, o programa deverá ler o salário atual
 #    do funcionário e ler o percentual de reajuste. Ao final imprimir
 #    o valor do novo salário.
+def q16():
+    salario = float(input('Valor do salario: R$ '))
+    reajuste_salario = float(input('Valor do reajste: R$ '))
+    salario_reajstado = round(salario * reajuste_salario/100, 2)
+    resultado = f'''
+    Valor do salario: R$ {salario}
+    Reajste do salario: R$ {salario_reajstado}
+    '''
+    print(resultado)
+q16()
 
 #17. Faça um programa que calcule a conversão entre graus centígrados
 #    e Fahrenheit. Para isso, leia o valor em centígrados e calcule
