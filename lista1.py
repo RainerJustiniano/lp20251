@@ -108,13 +108,20 @@ def q13():
     Saldof = (Saldo + Nsaldo)
 
     print (Saldof)
-q13()
+
 #14. Faça um programa que leia a base e a altura de um retângulo
-#    e imprima o perímetro (base*2 + altura*2) e a área (base * altura).    
+#    e imprima o perímetro (base*2 + altura*2) e a área (base * altura).  
+def q14():
+    base = float(input('Digite a base do retangulo: ')) 
+    altura = float(input('Digite a altura do retangulo: '))
+    Perimetro = (base*2 + altura*2)
+    Área = (base * altura)
+    print (f'O perimetro é {Perimetro} e a área é {Área}.')
 
 #15. Faça um programa que leia o valor de um produto, o percentual
 #    do desconto desejado e imprima o valor do desconto e o valor
 #    do produto subtraindo o desconto.
+
 
 #16. Faça um programa que calcule o reajuste do salário de um
 #    funcionário. Para isso, o programa deverá ler o salário atual
