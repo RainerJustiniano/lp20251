@@ -148,13 +148,18 @@ def q16():
     Reajste do salario: R$ {salario_reajstado}
     '''
     print(resultado)
-q16()
 
 #17. Faça um programa que calcule a conversão entre graus centígrados
 #    e Fahrenheit. Para isso, leia o valor em centígrados e calcule
 #    com base na fórmula a seguir. Após calcular o programa deve
 #    imprimir o resultado da conversão.
 #    F = (9 x C + 160) / 5
+def q17 ():
+    C = float(input('Digite a temperatura em C: '))
+    F = (9 * C + 160) / 5
+    print(F)
+
+
 
 #18. Faça um programa que calcule a quantidade de litros de combustível
 #    consumidos em uma viagem, sabendo-se que o carro tem autonomia de
@@ -168,6 +173,21 @@ q16()
 #    • L = Litros de combustível consumidos
 #    Ao final, o programa deverá imprimir a distância percorrida e a
 #    quantidade de litros consumidos na viagem.
+def q18():
+    D = int(input('Digite o Km percorrido: '))
+    T = int(input('Digite o tempo de viagem: '))
+    V = int(input('Digite a velocidade: '))
+    D = (T * V)
+    L = (D / 12)
+    Texto = f'''
+    Distancia percorrida: {D} 
+    Litros gasto: {L}
+    Tempo de viagem: {T}
+    '''
+    print(Texto)
+
+q18()
+
 
 #19. Faça um programa que calcule o valor de uma prestação em atraso.
 #    Para isso, o programa deve ler o valor da prestação vencida, a
