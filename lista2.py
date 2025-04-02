@@ -43,11 +43,22 @@ def q1():
 #4. Faça um programa que leia um número e informe se ele é ou não divisível por 5.
 
 #5. Faça um programa que leia um número e informe se ele é divisível por 3 e por 7.
+def q5():
+    num = int(input('Digite um número inteiro: '))
+    if num % 3 == 0 and num % 7 == 0:
+        print(f'{num} é divisivel por 3 e 7')
+    else:
+        print(f'{num} não divisivel por 3 e 7')
 
 #6. A prefeitura do Rio de Janeiro abriu uma linha de crédito para os funcionários
 #   estatutários. O valor máximo da prestação não poderá ultrapassar 30% do salário
 #   bruto. Faça um programa que permita entrar com o salário bruto
 #   e o valor da prestação e informar se o empréstimo pode ou não ser concedido.
+def q6():
+    salario = float(input('Digite o valor do salario: '))
+    emprestimo = float(input('Digite o valor do emprestimo: '))
+    if salario + emprestimo > 100/30
+
 
 #7. Faça um programa que leia um número e indique se o número está compreendido
 #   entre 20 e 50 ou não.

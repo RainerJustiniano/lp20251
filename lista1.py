@@ -149,7 +149,7 @@ def q16():
     Salario reajustado: R$ {salario + salario_reajstado}
     '''
     print(resultado)
-q16()
+
 #17. Faça um programa que calcule a conversão entre graus centígrados
 #    e Fahrenheit. Para isso, leia o valor em centígrados e calcule
 #    com base na fórmula a seguir. Após calcular o programa deve
@@ -175,14 +175,14 @@ def q17 ():
 #    Ao final, o programa deverá imprimir a distância percorrida e a
 #    quantidade de litros consumidos na viagem.
 def q18():
-    T = float(input('Digite o tempo de viagem (em horas): '))
+    T = float(input('Digite o tempo de viagem (minutos): '))/60
     V = float(input('Digite a velocidade (em km/h): '))
     D = T * V
     L = D / 12
     Texto = f'''
-    Distancia percorrida: {D} 
-    Litros de combustivel gasto: {L}
-    Tempo de viagem: {T} horas.
+    Distancia percorrida: {int(D)} 
+    Litros de combustivel gasto: {round(L,1)}
+    Tempo de viagem: {int(T*60)} minutos.
     '''
     print(Texto)
 
@@ -214,3 +214,5 @@ def q19():
 #20. Faça um programa que efetue a apresentação do valor da conversão
 #    em real (R$) de um valor lido em dólar (US$). Para isso, será
 #    necessário também ler o valor da cotação do dólar.
+def q20():
+    R = float(input(Digite))
