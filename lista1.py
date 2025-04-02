@@ -215,4 +215,7 @@ def q19():
 #    em real (R$) de um valor lido em dólar (US$). Para isso, será
 #    necessário também ler o valor da cotação do dólar.
 def q20():
-    R = float(input(Digite))
+    Dl = float(input('Digite o valor em Dolar: (US$)'))
+    D = float(input('Digite a cotação do dolar dia: (US$)'))
+    print(f'O saldo em Real é {D * Dl}, R$')
+q20()
