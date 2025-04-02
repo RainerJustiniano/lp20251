@@ -146,9 +146,10 @@ def q16():
     resultado = f'''
     Valor do salario: R$ {salario}
     Reajste do salario: R$ {salario_reajstado}
+    Salario reajustado: R$ {salario + salario_reajstado}
     '''
     print(resultado)
-
+q16()
 #17. Faça um programa que calcule a conversão entre graus centígrados
 #    e Fahrenheit. Para isso, leia o valor em centígrados e calcule
 #    com base na fórmula a seguir. Após calcular o programa deve
@@ -174,19 +175,18 @@ def q17 ():
 #    Ao final, o programa deverá imprimir a distância percorrida e a
 #    quantidade de litros consumidos na viagem.
 def q18():
-    D = int(input('Digite o Km percorrido: '))
-    T = int(input('Digite o tempo de viagem: '))
-    V = int(input('Digite a velocidade: '))
-    D = (T * V)
-    L = (D / 12)
+    T = float(input('Digite o tempo de viagem (em horas): '))
+    V = float(input('Digite a velocidade (em km/h): '))
+    D = T * V
+    L = D / 12
     Texto = f'''
     Distancia percorrida: {D} 
-    Litros gasto: {L}
-    Tempo de viagem: {T}
+    Litros de combustivel gasto: {L}
+    Tempo de viagem: {T} horas.
     '''
     print(Texto)
 
-q18()
+
 
 
 #19. Faça um programa que calcule o valor de uma prestação em atraso.
@@ -195,6 +195,21 @@ q18()
 #    programa deve imprimir o valor da prestação atrasada, o período
 #    de atraso, os juros que serão cobrados pelo período de atraso, o
 #    valor da prestação acrescido dos juros. Considere juros simples.
+def q19(): 
+    prestacao = float(input('Digite o valor da prestação em atraso (R$): '))
+    taxa = float(input('Digite a taxa de juros (em porcentagem): '))
+    tempo = float(input('Digite o período de atraso (Em dias): '))
+
+    juros = prestacao * (taxa/100) * tempo
+    texto = f'''
+    O valor da prestação atrasada é: {prestacao} reais.
+    O período de atraso foi de {tempo} dias.
+    Os juros acumulados são de: {juros} reais.
+    O valor final da prestação é: {prestacao + juros} reais.
+ '''
+    print(texto)
+
+
 
 #20. Faça um programa que efetue a apresentação do valor da conversão
 #    em real (R$) de um valor lido em dólar (US$). Para isso, será
