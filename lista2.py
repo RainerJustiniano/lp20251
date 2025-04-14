@@ -1,6 +1,10 @@
 '''
 Exercícios sobre os comandos de condição em python
 '''
+from datetime import date, datetime
+
+HOJE = datetime.now()
+
 
 def exemplo_if_else():
     media = float(input('Média: '))
@@ -54,11 +58,6 @@ def q5():
 #   estatutários. O valor máximo da prestação não poderá ultrapassar 30% do salário
 #   bruto. Faça um programa que permita entrar com o salário bruto
 #   e o valor da prestação e informar se o empréstimo pode ou não ser concedido.
-def q6():
-    salario = float(input('Digite o valor do salario: '))
-    emprestimo = float(input('Digite o valor do emprestimo: '))
-    if salario + emprestimo > 100/30
-
 
 #7. Faça um programa que leia um número e indique se o número está compreendido
 #   entre 20 e 50 ou não.
@@ -69,9 +68,35 @@ def q6():
 #9. Faça um programa que permita entrar com o ano de nascimento da pessoa e com o
 #   ano atual. O programa deve imprimir a idade da pessoa. Não se esqueça de
 #   verificar se o ano de nascimento informado é válido.
+def q9():
+    data_str = input('Data de Nascimento (dd/mm/aaaa): ')
+    data_nascimento = datetime.strptime(data_str, '%d/%m/%Y')
+
+    if (data_nascimento > HOJE):
+        print('Data invalida! Você nem nasceu ainda. ')
+    else:
+        print(f'Idade: {int((HOJE - data_nascimento).days/365)} anos. ')
 
 #10. Faça um programa que leia três números inteiros e imprima os três em ordem
 #crescente.
+def q10():
+    a = int(input('Primeiro inteiro: '))
+    b = int(input('Segundo inteiro: '))
+    c = int(input('Terceiro inteiro: '))
+
+    if (a < b < c):
+        print(f'{a} {b} {c}')
+    if (b < a < c):
+        print(f'{b} {a} {c}')
+    if (c < b < a):
+        print(f'{c} {b} {a}')
+    if (c < a < b):
+        print(f'{c} {a} {b}')
+    if (b < c < a):
+        print(f'{b} {c} {a}')
+    if (a < c < b):
+        print(f'{a} {c} {b}')
+
 
 #11. Faça um programa que leia 3 números e imprima o maior deles.
 
