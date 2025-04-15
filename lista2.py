@@ -2,8 +2,13 @@
 Exercícios sobre os comandos de condição em python
 '''
 from datetime import date, datetime
+# pip3 install deep-translator
+from deep_translator import GoogleTranslator
+
 
 HOJE = datetime.now()
+tradutor = GoogleTranslator(source='en', target='pt')
+
 
 
 def exemplo_if_else():
@@ -122,6 +127,7 @@ def q10():
 
 #11. Faça um programa que leia 3 números e imprima o maior deles.
 
+
 #12. Faça um programa que leia a idade de uma pessoa e informe:
 #• Se é maior de idade
 #• Se é menor de idade
@@ -171,6 +177,15 @@ def q10():
 #18. Faça um programa que leia um número inteiro entre 1 e 12 e escreva o mês
 #correspondente. Caso o usuário digite um número fora desse intervalo, deverá
 #aparecer uma mensagem informando que não existe mês com este número.
+def q18():
+    mes = int(input('Número do mês: '))
+    if mes < 1 or mes > 12:
+        print('Mês invalido!')
+    else:
+        data = datetime.strptime(f'01/{mes}/25', '%d/%m/%y')
+        mes_extenso = data.strftime('%B')
+        print(tradutor.translate("Month: " + mes_extenso))
+
 
 #19. Em um campeonato nacional de arco-e-flecha, tem-se equipes de três jogadores
 #para cada estado. Sabendo-se que os arqueiros de uma equipe não obtiveram o
