@@ -40,11 +40,32 @@ def q1():
 #   Caso o valor somado seja maior que 20, este deverá ser apresentado
 #   somando-se a ele mais 8, caso o valor somado seja menor ou igual a
 #   20, este deverá ser apresentado subtraindo-se 5.
+def q2():
+    num1 = int(input('Digite num1: '))
+    num2 = int(input('Digite num2: '))
+    soma = num1 + num2
+    if soma > 20:
+        print(f'{soma + 8}')
+    else:
+        print(f'{soma - 5}')
+
 
 #3. Faça um programa que leia um número e imprima uma das duas mensagens:
 #   "É múltiplo de 3"ou "Não é múltiplo de 3".
+def q3():
+    num1 = int(input('Digite num1: '))
+    if num1 % 3 == 0:
+        print(f'{num1} é multiplo de 3! ')
+    else:
+        print(f'{num1} não é multiplo de 3! ')
 
 #4. Faça um programa que leia um número e informe se ele é ou não divisível por 5.
+def q4():
+     num1 = int(input('Digite num1: '))
+     if num1 % 5 == 0:
+         print(f'{num1} é divisivel por 5')
+     else:
+        print(f'{num1} não divisivel por 5')
 
 #5. Faça um programa que leia um número e informe se ele é divisível por 3 e por 7.
 def q5():
@@ -58,6 +79,7 @@ def q5():
 #   estatutários. O valor máximo da prestação não poderá ultrapassar 30% do salário
 #   bruto. Faça um programa que permita entrar com o salário bruto
 #   e o valor da prestação e informar se o empréstimo pode ou não ser concedido.
+
 
 #7. Faça um programa que leia um número e indique se o número está compreendido
 #   entre 20 e 50 ou não.
