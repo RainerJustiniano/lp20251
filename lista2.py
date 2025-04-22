@@ -148,6 +148,16 @@ def q10():
 
 
 #11. Faça um programa que leia 3 números e imprima o maior deles.
+def q11():
+    a = int(input('Primeiro inteiro: '))
+    b = int(input('Segundo inteiro: '))
+    c = int(input('Terceiro inteiro: '))
+    if (a > b and a > c):
+        print(f'{a} é 1 num, o maior numero! ')
+    elif (b > a and b > c):
+        print(f'{b} é 2 num, o maior numero! ')
+    else:
+        print(f'{c} é 3 num , o maior numero! ')
 
 
 #12. Faça um programa que leia a idade de uma pessoa e informe:
