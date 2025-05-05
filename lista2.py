@@ -164,12 +164,89 @@ def q11():
 #• Se é maior de idade
 #• Se é menor de idade
 #• Se é maior de 65 anos
+def q12():
+    def show_idade():
+        idade = int(txt_idade.get())
+        msg = ''
+        if (idade < 18):
+            msg = 'Menor de Idade'
+        elif (idade > 65):
+            msg = 'Maior de 65 anos'
+        else:
+            msg = 'Maior de Idade'
+
+        messagebox.showinfo(
+            title='Situação da Idade!',
+            message=f'{msg}')
+        txt_idade.delete(0, len(txt_idade.get()))
+
+    window = Tk()
+    window.title('Questão 12')
+    window.config(padx=10, pady=10)
+    lbl_idade = Label(text='Idade:')
+    lbl_idade.grid(row=0, column=0)
+    global txt_idade
+    txt_idade = Entry(width=4)
+    txt_idade.grid(row=0, column=1, columnspan=2, sticky='W')
+    txt_idade.focus()
+    btn_ok = Button(text="OK", width=5, command=show_idade)
+    btn_ok.grid(row=1, column=0, columnspan=3)
+
+    window.mainloop()
 
 #13. Faça um programa que permita entrar com o nome, a nota da prova 1 e a nota
 #da prova 2 de um aluno. O programa deve imprimir o nome, a nota da prova 1,
 #a nota da prova 2, a média das notas e uma das mensagens: "Aprovado",
 #"Reprovado"ou "em Prova Final"(a média é 7 para aprovação, menor que 3 para
 #reprovação e as demais em prova final).
+def q13():
+    def show_nota():
+        n1 = int(txt_nota1.get())
+        n2 = int(txt_nota2.get())
+        media = (n1+n2)/2
+        situacao = ''
+        if (media >= 7):
+            situacao = 'Aprovado'
+        elif (media >= 3):
+            situacao = 'Prova Final'
+        else:
+            situacao = 'Reprovado'
+        msg = f'Estudante: {txt_nome.get()}\nMédia: {media}\nSituação: {situacao}'
+        messagebox.showinfo(
+            title='Situação do Estudante!',
+            message=f'{msg}')
+        txt_nome.delete(0, len(txt_nome.get()))
+        txt_nota1.delete(0, len(txt_nota1.get()))
+        txt_nota2.delete(0, len(txt_nota2.get()))
+        txt_nome.focus()
+
+    window = Tk()
+    window.title('Questão 13')
+    window.config(padx=10, pady=10)
+
+    lbl_nome = Label(text='Nome:', font=("Arial", 16, "bold"))
+    lbl_nome.grid(row=0, column=0)
+    global txt_nome
+    txt_nome = Entry(width=30, font=("Arial", 16, "normal"))
+    txt_nome.grid(row=0, column=1, columnspan=2, sticky='W')
+    txt_nome.focus()
+
+    lbl_nota1 = Label(text='Nota 1:', font=("Arial", 16, "bold"))
+    lbl_nota1.grid(row=1, column=0)
+    global txt_nota1
+    txt_nota1 = Entry(width=6, font=("Arial", 16, "normal"))
+    txt_nota1.grid(row=1, column=1, columnspan=2, sticky='W')
+
+    lbl_nota2 = Label(text='Nota 2:', font=("Arial", 16, "bold"))
+    lbl_nota2.grid(row=2, column=0)
+    global txt_nota2
+    txt_nota2 = Entry(width=6, font=("Arial", 16, "normal"))
+    txt_nota2.grid(row=2, column=1, columnspan=2, sticky='W')
+
+    btn_ok = Button(text="Verificar Resultado", bg="green", fg="white", font=("Arial", 16, "bold"), command=show_nota)
+    btn_ok.grid(row=4, column=0, columnspan=3, sticky='E')
+
+    window.mainloop()
 
 #14. Faça um programa que permita entrar com o salário de uma pessoa e imprima o
 #desconto do INSS segundo a tabela seguir:
@@ -178,6 +255,21 @@ def q11():
 #Maior que R$600,00 e menor ou igual a R$1200,00 20%
 #Maior que R$1200,00 e menor ou igual a R$2000,00 25%
 #Maior que R$2000,00 30%
+def q14():
+        salario = float(input("Digite o salário: R$ "))
+    if (salario <= 600):
+       desconto = 0
+        print("Isento de desconto do INSS.")
+    elif (salario <= 1200):
+        desconto = (salario * 0.20)
+    elif (salario <= 2000):
+        desconto = (salario * 0.25)
+    else:
+        desconto = (salario * 0.30)
+
+    if (salario > 600):
+        print(f"Desconto do INSS: R$ {desconto:.2f}")
+        print(f"Salário com desconto: R$ {salario - desconto:.2f}")
 
 #15. Um comerciante comprou um produto e quer vendê-lo com um lucro de 45% se o
 #valor da compra for menor que R$20,00, caso contrário, o lucro será de 30%.
