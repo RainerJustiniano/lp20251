@@ -256,24 +256,33 @@ def q13():
 #Maior que R$1200,00 e menor ou igual a R$2000,00 25%
 #Maior que R$2000,00 30%
 def q14():
-        salario = float(input("Digite o salário: R$ "))
-    if (salario <= 600):
-       desconto = 0
+    salario = float(input("Digite o salário: R$ "))
+    
+    if salario <= 600:
+        desconto = 0
         print("Isento de desconto do INSS.")
-    elif (salario <= 1200):
-        desconto = (salario * 0.20)
-    elif (salario <= 2000):
-        desconto = (salario * 0.25)
+    elif salario <= 1200:
+        desconto = salario * 0.20
+    elif salario <= 2000:
+        desconto = salario * 0.25
     else:
-        desconto = (salario * 0.30)
+        desconto = salario * 0.30
 
-    if (salario > 600):
+    if salario > 600:
         print(f"Desconto do INSS: R$ {desconto:.2f}")
         print(f"Salário com desconto: R$ {salario - desconto:.2f}")
+
 
 #15. Um comerciante comprou um produto e quer vendê-lo com um lucro de 45% se o
 #valor da compra for menor que R$20,00, caso contrário, o lucro será de 30%.
 #Faça um programa que leia o valor do produto e imprima o valor da venda.
+def q15():
+    compra = float(input('Insira o valor do produto: R$ '))
+    if compra <= 20.00:
+        venda = compra * 1.45
+    else:
+        venda = compra * 1.30
+    print(f"Valor de venda: R$ {venda:.2f}")
 
 #16. A confederação brasileira de natação irá promover eliminatórias para o
 #próximo mundial. Faça um programa que receba a idade de um nadador e imprima
@@ -284,6 +293,20 @@ def q14():
 #Juvenil A 11 - 13 anos
 #Juvenil B 14 - 17 anos
 #Sênior maiores de 18 anos
+
+def q16 ():
+    idade = int(input('Digite a idade do competidor: '))
+    if 5 <= idade <= 7:
+        categoria = 'Infantil A'
+    elif 8 <= idade <= 10:
+        categoria = 'Infantil B'
+    elif 11 <= idade <= 13:
+        categoria = 'Juvenil A'
+    elif 14 <= idade <= 17:
+        categoria = 'Juvenil B'
+    elif idade >= 18:
+        categoria = 'Sênior'
+    print(f'Categoria: {categoria}')
 
 #17. Depois da liberação do governo para as mensalidades dos planos de saúde,
 #as pessoas começaram a fazer pesquisas para descobrir um bom plano, não
@@ -297,6 +320,10 @@ def q14():
 #Acima de 45 até 59 anos R$150,00
 #Acima de 59 até 65 anos R$250,00
 #Maior que 65 anos R$400,00
+def q17 ():
+    nome = str(input("Digite seu nome: ")
+    idade = int(input("Digite sua idade: "))
+    
 
 #18. Faça um programa que leia um número inteiro entre 1 e 12 e escreva o mês
 #correspondente. Caso o usuário digite um número fora desse intervalo, deverá
