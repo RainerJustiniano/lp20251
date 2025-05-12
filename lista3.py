@@ -5,16 +5,30 @@ Lista de Exercícios referentes a estruturas de iteração (repetição)
 #1.Faça um programa que imprima todos os números de 1 até 100.
 
 #2. Faça um programa que imprima todos os números pares de 100 até 1.
+def q2():
+    for x in range(100,0,-2):
+        print(x, end=' ')
 
 #3. Faça um programa que imprima os múltiplos de 5, no intervalo de 1 até 500.
+def q3():
+    for x in range(0,501,5):
+        print(x, end=' ')
 
 #4. Faça um programa que permita entrar com o nome, a idade e o sexo de 20
 #pessoas.O programa deve imprimir o nome da pessoa se ela for do sexo masculino
 #e tiver mais de 21 anos.
+def q4():
+    for x in range(4):
+        nome = input('Nome: ')
+        sexo = input('Sexo: ').upper()[0]
+        idade = int(input('Idade: '))
+        if sexo == 'M' and idade >= 21:
+            print(f'{nome} é do sexo mascolino e maior de 21.')
 
 #5. Sabendo-se que a unidade lógica e aritmética calcula o produto através de somas
 #sucessivas, crie um programa que calcule o produto de dois números inteiros
 #lidos. Suponha que os números lidos sejam positivos.
+
 
 #6. Crie um programa que imprima os 20 primeiros termos da série de Fibonacci.
 #Observação: os dois primeiros termos desta série são 1 e 1 e os demais são gerados
