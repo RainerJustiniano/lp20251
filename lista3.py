@@ -65,6 +65,21 @@ def q6():
 #prova 1 e da prova 2 de 15 alunos. Ao final, imprimir uma listagem, contendo:
 #nome, nota da prova 1, nota da prova 2, e média das notas de cada aluno. Ao final,
 #imprimir a média geral da turma.
+def q7():
+    resultado = ''
+    for i in range(2):
+
+        nome = input('Digite seu nome: ')
+        nota1 = float(input('Digite a 1° nota: '))
+        nota2 = float(input('Digite a 2° nota: '))
+        media = (nota1 + nota2 / 2)
+        resultado += f'{nome} 1° prova {nota1} 2° prova {nota2} a media é {media}'\n'
+
+    
+    print(resultado)
+
+
+
 
 #8. Faça um programa que permita entrar com o nome e o salário bruto de 10 pessoas.
 #Após ler os dados, imprimir o nome e o valor da alíquota do imposto de renda
