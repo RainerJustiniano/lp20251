@@ -3,6 +3,9 @@ Lista de Exercícios referentes a estruturas de iteração (repetição)
 '''
 
 #1.Faça um programa que imprima todos os números de 1 até 100.
+def q1():
+    for x in range(101):
+        print(x, end=' ')
 
 #2. Faça um programa que imprima todos os números pares de 100 até 1.
 def q2():
@@ -28,7 +31,17 @@ def q4():
 #5. Sabendo-se que a unidade lógica e aritmética calcula o produto através de somas
 #sucessivas, crie um programa que calcule o produto de dois números inteiros
 #lidos. Suponha que os números lidos sejam positivos.
+def q5():
+    num1 = int(input('Digite o 1° numero inteiro positivo: '))
+    num2 = int(input('Digite o 2° numero inteiro positivo: '))
 
+    if num1 < 0 or num2 < 0:
+        print('Numeros Invalidos!')
+    else:
+        soma_produto = 0
+        for x in range(num2):
+            soma_produto += num1
+        print(f'A soma sucessivas de {num1} mais {num2} é igual {soma_produto}')
 
 #6. Crie um programa que imprima os 20 primeiros termos da série de Fibonacci.
 #Observação: os dois primeiros termos desta série são 1 e 1 e os demais são gerados
@@ -36,6 +49,17 @@ def q4():
 #• 1 + 1 = 2, terceiro termo;
 #• 1 + 2 = 3, quarto termo, etc.
 # 1 1 2 3 5 8 13 21
+def q6():
+    a = 1
+    b = 1
+
+    print(a, b, end=' ')
+
+    for i in range(18):
+        c = a + b
+        print(c, end=' ')
+        a = b
+        b = c
 
 #7. Crie um programa que permita entrar com o nome, a nota da
 #prova 1 e da prova 2 de 15 alunos. Ao final, imprimir uma listagem, contendo:
