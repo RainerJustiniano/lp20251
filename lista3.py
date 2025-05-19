@@ -67,18 +67,20 @@ def q6():
 #imprimir a média geral da turma.
 def q7():
     resultado = ''
+    media_geral = 0
     for i in range(2):
 
         nome = input('Digite seu nome: ')
         nota1 = float(input('Digite a 1° nota: '))
         nota2 = float(input('Digite a 2° nota: '))
-        media = (nota1 + nota2 / 2)
-        resultado += f'{nome} 1° prova {nota1} 2° prova {nota2} a media é {media}'\n'
+        media = (nota1 + nota2) / 2
+        media_geral += media
+        resultado += f'{nome}\t{nota1}\t{nota2}\t{media}\n'
 
     
+    print('Nome\tnota1\tnota2\tmedia')
     print(resultado)
-
-
+    print(f'A média geral é {round(media_geral/2,1)}')
 
 
 #8. Faça um programa que permita entrar com o nome e o salário bruto de 10 pessoas.
@@ -88,6 +90,18 @@ def q7():
 #Salário menor que R$1300,00 Isento
 #Salário maior ou igual a R$1300,00 e menor que R$2300,00 10% do salário bruto
 #Salário maior ou igual a R$2300,00 15% do salário bruto
+def q8():
+
+    resultado = ''
+    for i in range(2):
+ 
+        nome = input('Digite seu nome: ')
+        sal = float(input('Salario: R$ '))
+        irpf = sal * ( 0 if sal < 1300 else 0.1 if sal < 2300 else 0.15)
+        resultado += f'{nome}\t{sal}\t{round(irpf,2)}\n'
+    print('Nome\tSal(R$)\tIRPF(R$)')
+    print(resultado)
+
 
 #9. No dia da estreia do filme "Procurando Dory", uma grande emissora de TV realizou
 #uma pesquisa logo após o encerramento do filme. Cada espectador respondeu
