@@ -113,6 +113,7 @@ def q8():
 #• A percentagem de pessoas que responderam bom entre todos os expectadores
 #analisados.
 
+
 #10. Em um campeonato Europeu de Volleyball, se inscreveram 30 países. Sabendo-se
 #que na lista oficial de cada país consta, além de outros dados, peso e idade de 12
 #jogadores, crie um programa que apresente as seguintes informações:
@@ -130,6 +131,17 @@ def q8():
 #ano, e um país B com 7 milhões de habitantes e uma taxa de natalidade de 2% ao
 #ano, fazer um programa que calcule e imprima o tempo necessário para que a
 #população do país A ultrapasse a população do país B.
+def q12():
+    popuA = 5000000
+    popuB = 7000000
+    anos = 0
+    while popuA < popuB:
+        anos+=1
+        popuA += popuA*0.03
+        popuB += popuB*0.02
+    print(f'Após {anos} anos:')
+    print(f'População A {popuA}')
+    print(f'População B {popuB}')
 
 #13. Uma empresa de fornecimento de energia elétrica faz a leitura mensal dos medidores
 #de consumo. Para cada consumidor, são digitados os seguintes dados:
