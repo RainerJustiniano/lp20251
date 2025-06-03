@@ -122,6 +122,8 @@ def q8():
 #• O atleta mais pesado de cada time;
 #• O atleta mais jovem de cada time;
 #• O peso médio e a idade média de todos os participantes.
+
+
     
 #11. Construa um programa que leia vários números e informe quantos números
 #entre 100 e 200 foram digitados. Quando o valor 0 (zero) for lido, o algoritmo
@@ -156,6 +158,24 @@ def q12():
 #• O custo total para cada consumidor
 #• O total de consumo para os três tipos de consumidor
 #• A média de consumo dos tipos 1 e 2
+def q13():
+
+
+    Ncon = int(input("Digite o codigo do consumidor: "))
+    Kwh = float(input("Digite a quantidade de Kwh consumida: "))
+    Cod_cons = int(input("Digite o tipo de consumidor: "))
+    res = 0.3
+    com = 0.5
+    ind = 0.7 
+    if Cod_cons == 1:
+        print(f'{Kwh * res}')
+    if Cod_cons == 2:
+        print(f'{Kwh * com}')
+    elif Cod_cons == 3:
+        print(f'{Kwh * ind}')
+    
+
+
 
 #14. Faça um programa que leia vários números inteiros e apresente o fatorial de cada
 #número. O algoritmo encerra quando se digita um número menor do que 1.n
