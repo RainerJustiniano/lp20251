@@ -9,9 +9,9 @@ Lista de Exercícios referentes a coleções e arquivos em python
 #contrário, deve imprimir a mensagem: "Nao encontrado!".
 def q1():
     lista = []
-    for  _ in rang(15):
+    for _ in range(15):
         lista.append(random.randrange(100))
-    print(lista, end=' ')
+    print(lista)
     numero = int(input('Digite um numero a ser buscado: '))
     try:
         posicao = lista.index(numero)
@@ -22,9 +22,28 @@ def q1():
 
 #2. Faça um programa que armazene 10 letras em uma lista e imprima uma listagem
 #numerada.
+def q2():
+    letras = []
+    for _ in range(10):
+        letras.append(chr(random.randrange(65,91)))
+    cont = 1 
+    for c in letras:
+        print(f'{cont}: {c}')
+        cont+=1
 
+#2.1 Faça um programa que peça ao usuário para informar a qtde de caracteres
+# para a geração de uma senha aleatória. Ao final o programa deve exibir a
+# senha sugerida. (ASCII 40-126)
+def q21():
+    qtde = int(input('Qtde de caracteres para a senha: ',8,20))
+    senha = ''
+    for _ in range(qtde):
+        senha+=chr(random.randrange(40,127))
+    print(f'Senha sugerida: {senha}')   
+    
 #3. Construa uma programa que armazene 15 números em uma lista e imprima
 #uma listagem numerada contendo o número e uma das mensagens: par ou ímpar.
+
 
 #4. Faça um programa que armazene 8 números em uma lista e imprima todos os
 #números. Ao final, imprima o total de números múltiplos de seis.
@@ -106,3 +125,6 @@ def q1():
 
 #20. Faça um programa que leia a matrícula e a média de 100 alunos. Ordene da maior
 #para a menor nota e imprima uma relação contendo todas as matrículas e médias.
+
+questao = int(input('Questão a ser executada: '))
+eval(f'q{questao}()')
