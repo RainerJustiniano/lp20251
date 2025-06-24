@@ -1,4 +1,5 @@
 import random
+import names
 '''
 Lista de Exercícios referentes a coleções e arquivos em python
 '''
@@ -55,11 +56,10 @@ def q21():
 #Utilize quantas listas forem necessárias para armazenar os dados.
 def q5():
     diario = []
-    contchar = 65
+    
     for _ in range(15):
         aluno = dict()
-        aluno['nome'] = chr(contchar)
-        contchar += 1
+        aluno['nome'] = names.get_first_name()
         aluno['n1'] = random.randrange(0,11)
         aluno['n2'] = random.randrange(0,11)
         aluno['media'] = round((aluno['n1'] + aluno['n2'])/2,1)
@@ -83,11 +83,14 @@ def q6():
         prof = dict()
         prof['nome'] = chr(contchar)
         contchar += 1
-        prof['sal'] = random.randrange(800,1564)
+        prof['sal'] = round(random.randrange(800,1564))
         prof['nsal'] = prof['sal'] + (prof['sal'] * 0.08)
         salario.append(prof)
     
-    listasalario = ''
+    listasalario = 'NOME\tSALARIO\tNOVOSALARIO\n'
+    for a in salario:
+        listasalario += f'{a['nome']}\t{a['sal']}\t{a['nsal']  }\n'
+    print(listasalario)
 
 
 
@@ -98,6 +101,8 @@ def q6():
 #• lucro < 10%
 #• 10% <= lucro <= 20%
 #• lucro > 20%
+def q7():
+    mercadoria = []
 
 #8. Construa um programa que armazene o código, a quantidade, o valor de compra
 #e o valor de venda de 30 produtos. A listagem pode ser de todos os produtos ou
