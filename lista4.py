@@ -1,5 +1,6 @@
 import random
 import names
+from produtos import listar_produtos
 '''
 Lista de Exercícios referentes a coleções e arquivos em python
 '''
@@ -44,7 +45,7 @@ def q21():
     
 #3. Construa uma programa que armazene 15 números em uma lista e imprima
 #uma listagem numerada contendo o número e uma das mensagens: par ou ímpar.
-
+#def q3 ():
 
 #4. Faça um programa que armazene 8 números em uma lista e imprima todos os
 #números. Ao final, imprima o total de números múltiplos de seis.
@@ -101,8 +102,65 @@ def q6():
 #• lucro < 10%
 #• 10% <= lucro <= 20%
 #• lucro > 20%
+
 def q7():
-    mercadoria = []
+    nomes_produtos = [
+        "Arroz", "Feijão", "Macarrão", "Óleo", "Açúcar", "Café", "Sal", "Farinha", "Leite", "Manteiga",
+        "Pão", "Presunto", "Queijo", "Frango", "Carne", "Peixe", "Biscoito", "Chocolate", "Refrigerante", "Suco",
+        "Água", "Iogurte", "Sabonete", "Shampoo", "Condicionador", "Papel Higiênico", "Pasta de Dente", "Escova", "Detergente", "Sabão em Pó",
+        "Alface", "Tomate", "Cebola", "Alho", "Cenoura", "Batata", "Maçã", "Banana", "Laranja", "Uva",
+        "Chiclete", "Balas", "Leite Condensado", "Creme de Leite", "Molho de Tomate", "Sardinha", "Atum", "Palmito", "Ervilha", "Milho",
+        "Fubá", "Aveia", "Granola", "Pipoca", "Torrada", "Requeijão", "Margarina", "Amaciante", "Desinfetante", "Água Sanitária",
+        "Cerveja", "Vinho", "Whisky", "Vodka", "Energético", "Barra de Cereal", "Rosquinha", "Bolo", "Croissant", "Pizza Congelada",
+        "Hambúrguer", "Salsicha", "Linguiça", "Queijo Prato", "Queijo Minas", "Presunto Parma", "Lasanha", "Escondidinho", "Feijoada", "Panqueca",
+        "Sopa", "Molho Branco", "Tempero", "Ketchup", "Mostarda", "Maionese", "Picles", "Champignon", "Azeitona", "Seleta de Legumes",
+        "Esponja", "Saco de Lixo", "Luvas", "Desodorante", "Cotonete", "Absorvente", "Sabão em Barra", "Água com Gás", "Suco Natural", "Gelatina"
+    ]
+   
+    def listar_produtos():
+        return random.choice(nomes_produtos)
+
+    precos_compra = []
+    precos_venda = []
+    produtos_mercado = []
+
+    lucro_menor_10 = 0
+    lucro_entre_10_e_20 = 0
+    lucro_maior_20 = 0
+
+    for i in range(100):
+        compra = round(random.uniform(10.0, 100.0), 2)
+        margem = random.uniform(0.05, 0.5)
+        venda = round(compra * (1 + margem), 2)
+        produto = listar_produtos()
+
+        precos_compra.append(compra)
+        precos_venda.append(venda)
+        produtos_mercado.append(produto)
+
+        lucro = ((venda - compra) / compra) * 100
+
+        if lucro < 10:
+            lucro_menor_10 += 1
+        elif 10 <= lucro <= 20:
+            lucro_entre_10_e_20 += 1
+        else:
+            lucro_maior_20 += 1
+
+    # Mostrar resumo
+    print("\n--- Resumo de Lucros (Dados Simulados) ---")
+    print(f"Mercadorias com lucro < 10%: {lucro_menor_10}")
+    print(f"Mercadorias com 10% <= lucro <= 20%: {lucro_entre_10_e_20}")
+    print(f"Mercadorias com lucro > 20%: {lucro_maior_20}")
+
+    # Mostrar detalhes dos produtos
+    print(f"\n{'Tabela de preços':>40}")
+    print(f"\n{'N°':<4}{'Produto':>13}{'Compra':>22}{'Venda':>19}{'Lucro':>19}")
+    print("_" * 82)
+    for i in range(100):
+        lucro_percentual = ((precos_venda[i] - precos_compra[i]) / precos_compra[i]) * 100
+        print(f"{i+1:03d} - {produtos_mercado[i]:<20} | Compra: R$ {precos_compra[i]:>6.2f} | Venda: R$ {precos_venda[i]:>6.2f} | Lucro: {lucro_percentual:>6.2f}%")
+
 
 #8. Construa um programa que armazene o código, a quantidade, o valor de compra
 #e o valor de venda de 30 produtos. A listagem pode ser de todos os produtos ou
