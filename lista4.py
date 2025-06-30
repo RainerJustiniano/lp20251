@@ -1,5 +1,5 @@
 import random
-import names
+#import names
 from produtos import listar_produtos
 '''
 Lista de Exercícios referentes a coleções e arquivos em python
@@ -45,9 +45,20 @@ def q21():
     
 #3. Construa uma programa que armazene 15 números em uma lista e imprima
 #uma listagem numerada contendo o número e uma das mensagens: par ou ímpar.
-#def q3 ():
+def q3 ():
+    arquivo = open('questao.csv','r')
+    for linha in arquivo:
+        numeros = linha.split(';')
+        resultado = ''
+        for numero in numeros:
+            resultado+=f'{numero}\t{"PAR" if int(numero)%2==0 else "IMPAR"}\n'
+        arquivo_saida = open('questao.out','w')
+        arquivo_saida.write(resultado)
+    arquivo.close()
+    arquivo_saida.colse()
 
-#4. Faça um programa que armazene 8 números em uma lista e imprima todos os
+
+#4 . Faça um programa que armazene 8 números em uma lista e imprima todos os
 #números. Ao final, imprima o total de números múltiplos de seis.
 
 #5. Faça um programa que armazene as notas das provas 1 e 2 de 15 alunos. Calcule
@@ -147,13 +158,10 @@ def q7():
         else:
             lucro_maior_20 += 1
 
-    # Mostrar resumo
     print("\n--- Resumo de Lucros (Dados Simulados) ---")
     print(f"Mercadorias com lucro < 10%: {lucro_menor_10}")
     print(f"Mercadorias com 10% <= lucro <= 20%: {lucro_entre_10_e_20}")
     print(f"Mercadorias com lucro > 20%: {lucro_maior_20}")
-
-    # Mostrar detalhes dos produtos
     print(f"\n{'Tabela de preços':>40}")
     print(f"\n{'N°':<4}{'Produto':>13}{'Compra':>22}{'Venda':>19}{'Lucro':>19}")
     print("_" * 82)
@@ -165,6 +173,21 @@ def q7():
 #8. Construa um programa que armazene o código, a quantidade, o valor de compra
 #e o valor de venda de 30 produtos. A listagem pode ser de todos os produtos ou
 #somente de um ao se digitar o código. Utilize dicionário como estrutura de dados.
+def q8():
+    lista_produtos = [
+        "Arroz", "Feijão", "Macarrão", "Óleo", "Açúcar", "Café", "Sal", "Farinha", "Leite", "Manteiga",
+        "Pão", "Presunto", "Queijo", "Frango", "Carne", "Peixe", "Biscoito", "Chocolate", "Refrigerante", "Suco",
+        "Água", "Iogurte", "Sabonete", "Shampoo", "Condicionador", "Papel Higiênico", "Pasta de Dente", "Escova", "Detergente", "Sabão em Pó"
+    ]
+    codigo = []
+    quant = []
+    valor_compra = []
+    valor_venda = []
+    for i in range(30):
+        produto = dict()
+
+
+
 #9. Faça um programa que leia dois conjuntos de números inteiros, tendo
 #cada um 10 elementos. Ao final o programa deve listar os elementos comuns aos
 #conjuntos.
