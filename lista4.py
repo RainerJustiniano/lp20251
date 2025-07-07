@@ -179,12 +179,41 @@ def q8():
         "Pão", "Presunto", "Queijo", "Frango", "Carne", "Peixe", "Biscoito", "Chocolate", "Refrigerante", "Suco",
         "Água", "Iogurte", "Sabonete", "Shampoo", "Condicionador", "Papel Higiênico", "Pasta de Dente", "Escova", "Detergente", "Sabão em Pó"
     ]
-    codigo = []
-    quant = []
-    valor_compra = []
-    valor_venda = []
+    
+    produtos = {}
+    codigo = 0
+    quantidade = 0
+    valor_compra = 0
+    valor_venda = 0
     for i in range(30):
-        produto = dict()
+        print(f'\nProduto: {lista_produtos[i]}')
+        codigo = round(random.randrange(1,31))
+        quantidade = round(random.randrange(1,10))
+        valor_compra = round(random.uniform(10.0, 100.0), 2)
+        valor_venda = round(random.uniform(10.0, 100.0), 2)
+        produtos[codigo] = {
+            'nome': lista_produtos[i],
+            'quantidade': quantidade,
+            'compra': valor_compra,
+            'venda': valor_venda
+        }
+    opcao = input('Digite 1 para listar todos os produtos ou 2 para buscar por código: ')
+    if opcao == '1':
+        print('Código\tNome\tQtd\tCompra\tVenda\n')
+        for cod, p in produtos.items():
+             print(f"{cod}\t{p['nome']:<15}{p['quantidade']}\tR$ {p['compra']:.2f}\tR$ {p['venda']:.2f}")
+    elif opcao == "2":
+        codigo = input("Digite o código do produto: ")
+        if codigo in produtos:
+            p = produtos[codigo]
+            print(f"\nProduto: {p['nome']}")
+            print(f"Quantidade: {p['quantidade']}")
+            print(f"Valor de compra: R$ {p['compra']:.2f}")
+            print(f"Valor de venda: R$ {p['venda']:.2f}")
+        else:
+            print("Produto não encontrado.")
+    else:
+        print("Opção inválida.")
 
 
 
