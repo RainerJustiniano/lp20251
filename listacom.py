@@ -3,54 +3,139 @@ Exercícios sobre os comandos básicos em Python
 '''
 
 #1. Faça um programa que imprima o seu nome.
-
+def q1 ():
+    print ('Rainer')
+    
 #2. Faça um programa que imprima o produto dos valores 30 e 27.
-
+def q2 ():
+    produto = (30 + 27)
+    print(produto)
+    
 #3. Faça um programa que imprima a média aritmética entre os números 5, 8, 12.
+def q3 ():
+    media = (5+8+12)/3
+    print(media)
 
 #4. Faça um programa que leia e imprima um número inteiro.
+def q4 ():
+    n = int(input("Digite um numero inteiro: "))
+    print(n)
 
 #5. Faça um programa que leia dois números reais e os imprima.
+def q5 ():
+    N1 = float(input('Digite um numero real: '))
+    N2 = float(input('Digite um numero real: '))
+    print(N1,N2)
 
 #6. Faça um programa que leia um número inteiro e imprima o seu
 #   antecessor e o seu sucessor.
-
+def q6 ():
+    N1 = int(input('Digite um numero: '))
+    print(f'Antecessor {N1-1}')
+    print(f'Sucessor {N1+1}')
 #7. Faça um programa que leia o nome o endereço e o telefone de
 #   um cliente e ao final, imprima esses dados.
+def q7 ():
+    cliente_nome = str(input('Nome: '))
+    cliente_end = str(input('Endereço: '))
+    cliente_tel = int(input('Telefone: '))
+    dados = f'{cliente_nome}\t{cliente_end}\t{cliente_tel}\n'
+    print(f'Nome\tEndereço\tTelefone\n')
+    print(dados)
  
 #8. Faça um programa que leia dois números inteiros e imprima a
 #   subtração deles.
+def q8 ():
+    N1 = int(input('Digite n1: '))
+    N2 = int(input('Digite n2: '))
+    print(N1-N2)
 
 #9. Faça um programa que leia um número real e imprima ¼ deste número.
+def q9 ():
+    N1 = float(input('Digite um numero real: '))
+    print(N1/4)
 
 #10. Faça um programa que leia três números reais e calcule a
 #    média aritmética destes números. Ao final, o programa deve
 #    imprimir o resultado do cálculo.
+def q10 ():
+    N1 = float(input('Digite n1: '))
+    N2 = float(input('Digite n2: '))
+    N3 = float(input('Digite n3: '))
+    media = (N1+N2+N3)/3
+    print(media)
 
 #11. Faça um programa que leia dois números reais e calcule as
 #    quatro operações básicas entre estes dois números, adição,
 #    subtração,multiplicação e divisão. Ao final, o programa
 #    deve imprimir os resultados dos cálculos.
+def q11 ():
+    N1 = float(input('Digite n1: '))
+    N2 = float(input('Digite n2: '))
+    Adi = N1 + N2
+    Sub = N1 - N2
+    Div = N1 / N2
+    Mult = N1 * N2
+    Resultado = f'{Adi}\t{Sub}\t{Div}\t{Mult}\n'
+    print('Adição\tSubtração\tDivisão\tMultiplicação')
+    print(Resultado)
 
 #12. Faça um programa que leia um número real e calcule o
 #    quadrado deste número. Ao final, o programa deve
 #    imprimir o resultado do cálculo.
+def q12 ():
+    N1 = float(input('Digite n1: '))
+    quadrado = N1 ** 2
+    print(quadrado)
 
 #13. Faça um programa que leia o saldo de uma conta poupança e
 #    imprima o novo saldo, considerando um reajuste de 2%.
+def q13 ():
+    Sal_Ini = float(input('Digite saldo da conta: '))
+    Sal_Atu = Sal_Ini * 1.02
+    print(Sal_Atu)
 
 #14. Faça um programa que leia a base e a altura de um retângulo
-#    e imprima o perímetro (base*2 + altura*2) e a área (base * altura).  
+#    e imprima o perímetro (base*2 + altura*2) e a área (base * altura).
+def q14 ():
+    base = float(input('Digite o valor da base: '))
+    altura = float(input('Digite o valor da altura: '))
+    perimetro = (base*2) + (altura*2)
+    area = base * altura
+    print(f'O valor do perimetro é {perimetro}, e o valor da area é {area}')
 
 #15. Faça um programa que leia o valor de um produto, o percentual
 #    do desconto desejado e imprima o valor do desconto e o valor
 #    do produto subtraindo o desconto.
+def q15 ():
+    Vproduto = float(input('Digite o valor do produto: '))
+    Descodeseja = float(input('Digite o valor do desconto desejado: '))
+    Vdescon = round(Vproduto * Descodeseja/100, 2)
+    Vprodescon = Vproduto - Vdescon
+    resultado = f'''
+    Valor do produto: R${Vproduto}
+    Valor do desconto: R${Descodeseja} Desconto Adquirido: R${Vdescon}
+    Valor do produto com desconto: R${Vprodescon}
+    '''
+    print(resultado)
 
 #16. Faça um programa que calcule o reajuste do salário de um
 #    funcionário. Para isso, o programa deverá ler o salário atual
 #    do funcionário e ler o percentual de reajuste. Ao final imprimir
 #    o valor do novo salário.
+def q16 ():
+    Salatual = int(input('Digite o salario: '))
+    Porcensal = int(input('Digite o valor do reajuste em porcentagem: '))
+    Reajusal = round(Salatual * Porcensal/100,2)
+    Salreaju = Salatual + Reajusal
+    resultado = f'''
+    Salario atual: R${Salatual}
+    Reajuste salarial em porcentagem {Porcensal} em valor R${Reajusal}
+    Salario atualizado: R${Salreaju}
+    '''
+    print(resultado)
 
+    
 #17. Faça um programa que calcule a conversão entre graus centígrados
 #    e Fahrenheit. Para isso, leia o valor em centígrados e calcule
 #    com base na fórmula a seguir. Após calcular o programa deve
@@ -539,12 +624,6 @@ Lista de Exercícios referentes a coleções e arquivos em python
 #80. Faça um programa que armazene 8 números em uma lista e imprima todos os
 #números. Ao final, imprima o total de números múltiplos de seis.
 
-#5. Faça um programa que armazene as notas das provas 1 e 2 de 15 alunos. Calcule
-#e armazene a média arredondada. Armazene também a situação do aluno: 1-
-#Aprovado ou 2-Reprovado. Ao final o programa deve imprimir uma listagem
-#contendo as notas, a média e a situação de cada aluno em formato tabulado.
-#Utilize quantas listas forem necessárias para armazenar os dados.
-
 #81. Construa um programa que permita armazenar o salário de 20 pessoas. Calcular
 #e armazenar o novo salário sabendo-se que o reajuste foi de 8%. Imprimir uma
 #listagem numerada com o salário e o novo salário. Declare quantas listas forem
@@ -617,6 +696,12 @@ Lista de Exercícios referentes a coleções e arquivos em python
 
 #95. Faça um programa que leia a matrícula e a média de 100 alunos. Ordene da maior
 #para a menor nota e imprima uma relação contendo todas as matrículas e médias.
+
+#96. Faça um programa que armazene as notas das provas 1 e 2 de 15 alunos. Calcule
+#e armazene a média arredondada. Armazene também a situação do aluno: 1-
+#Aprovado ou 2-Reprovado. Ao final o programa deve imprimir uma listagem
+#contendo as notas, a média e a situação de cada aluno em formato tabulado.
+#Utilize quantas listas forem necessárias para armazenar os dados.
 
 questao = int(input('Questão a ser executada: '))
 eval(f'q{questao}()')
