@@ -60,6 +60,11 @@ def q3 ():
 
 #4 . Faça um programa que armazene 8 números em uma lista e imprima todos os
 #números. Ao final, imprima o total de números múltiplos de seis.
+def q4 ():
+
+
+
+
 
 #5. Faça um programa que armazene as notas das provas 1 e 2 de 15 alunos. Calcule
 #e armazene a média arredondada. Armazene também a situação do aluno: 1-
