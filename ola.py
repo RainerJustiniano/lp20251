@@ -38,7 +38,8 @@ def q4 ():
     else:
         print('Produto com problema! ')
 
-
+def q5 ():
+    
 
 
 
